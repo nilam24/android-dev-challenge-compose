@@ -27,7 +27,6 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.absolutePadding
-import androidx.compose.foundation.layout.padding
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -116,7 +115,7 @@ fun CountDownTimerTask() {
 @Composable
 fun ProgressImage(setProgress: String) {
 
-    Text(text = setProgress, modifier = Modifier.padding(6.dp), style = typography.h5)
+    Text(text = setProgress, modifier = Modifier.absolutePadding(6.dp,6.dp,6.dp,6.dp), style = typography.h5)
 
 }
 
