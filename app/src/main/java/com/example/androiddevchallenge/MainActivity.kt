@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
 fun ImageForCountdown() {
     MaterialTheme {
         Column(modifier = Modifier.absolutePadding(16.dp, 16.dp, 6.dp, 6.dp)) {
-            countDownTimerTask()
+            CountDownTimerTask()
             ImageUp()
             ImageDwn()
 
@@ -71,7 +71,7 @@ fun MyApp() {
 }
 
 @Composable
-fun countDownTimerTask() {
+fun CountDownTimerTask() {
     var setProgress: String by remember { mutableStateOf(value = "Count down") }
     var num: Long by remember { mutableStateOf(value = 10) }
 
@@ -79,7 +79,7 @@ fun countDownTimerTask() {
         override fun onTick(millisUntilFinished: Long) {
             num = millisUntilFinished / 1000
             setProgress = "$num"
-            Log.e("timercounttick", "" + millisUntilFinished)
+            Log.e("timer", "" + millisUntilFinished)
 
 
         }
@@ -118,7 +118,7 @@ fun ImageUp() {
 @Composable
 fun ProgressImagedwn(setProgress: String) {
 
-    Text(text = "$setProgress", modifier = Modifier.padding(6.dp), style = typography.h5)
+    Text(text = setProgress, modifier = Modifier.padding(6.dp), style = typography.h5)
 
 }
 
